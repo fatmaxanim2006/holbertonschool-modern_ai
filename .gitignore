@@ -1,0 +1,5 @@
+.bash_history
+.bashrc
+.cache/
+.gitconfig
+__pycache__/
