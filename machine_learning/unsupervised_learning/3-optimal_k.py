@@ -4,7 +4,9 @@ from sklearn import metrics
 
 
 def optimal_k(X, max_clusters=None, random_state=0):
-    """Evaluates K-Means clustering quality"""
+    """
+    Evaluates K-Means clustering quality using silhouette scores and inertia.
+    """
     K_Means = __import__('2-k_means').K_Means
     ks = []
     inertia_values = []
@@ -16,4 +18,5 @@ def optimal_k(X, max_clusters=None, random_state=0):
         ks.append(k)
         inertia_values.append(model.inertia_)
         silhouette_scores.append(metrics.silhouette_score(X, model.labels_))
+
     return ks, inertia_values, silhouette_scores
