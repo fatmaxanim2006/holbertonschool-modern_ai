@@ -20,6 +20,10 @@ def optimal_k(X, max_clusters=None, random_state=0):
     inertia_values = []
     silhouette_scores = []
 
+    # max_clusters-in None olma ehtimalına qarşı yoxlanış
+    if max_clusters is None:
+        return ks, inertia_values, silhouette_scores
+
     for k in range(2, max_clusters + 1):
         model = K_Means(n_clusters=k, random_state=random_state)
         model.fit(X)
