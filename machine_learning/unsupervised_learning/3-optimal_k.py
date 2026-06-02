@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """Module for finding optimal K"""
 from sklearn import metrics
+K_Means = __import__('2-k_means').K_Means
 
 
 def optimal_k(X, max_clusters=None, random_state=0):
     """
     Evaluates K-Means clustering quality using silhouette scores and inertia.
+
+    Args:
+        X (numpy.ndarray): Tabular data.
+        max_clusters (int): Maximum number of clusters.
+        random_state (int): Random seed.
+
+    Returns:
+        tuple: (ks, inertia_values, silhouette_scores)
     """
-    K_Means = __import__('2-k_means').K_Means
     ks = []
     inertia_values = []
     silhouette_scores = []
