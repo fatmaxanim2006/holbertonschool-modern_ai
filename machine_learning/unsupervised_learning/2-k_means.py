@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Module for K-means clustering"""
-from sklearn.cluster import KMeans
+from sklearn import cluster
 
 
-def kmeans(X, k):
-    """Performs K-means clustering on tabular data"""
-    kmeans_obj = KMeans(n_clusters=k)
-    kmeans_obj.fit(X)
-    return kmeans_obj.labels_, kmeans_obj.cluster_centers_
+def K_Means(X, n_clusters, random_state):
+    """Creates and fits a K-Means clustering model"""
+    model = cluster.KMeans(n_clusters=n_clusters, random_state=random_state)
+    model.fit(X)
+    return model
