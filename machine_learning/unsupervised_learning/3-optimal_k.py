@@ -3,6 +3,7 @@
 from sklearn import metrics
 K_Means = __import__('2-k_means').K_Means
 
+
 def optimal_k(X, max_clusters, random_state=0):
     """
     Evaluates K-Means clustering quality using silhouette scores and inertia.
